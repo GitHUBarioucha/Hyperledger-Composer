@@ -1,0 +1,26 @@
+/**
+ * New query file
+ */
+
+query selectOrders {
+    description: "Select all "
+    statement: SELECT org.acme.sintegralabsbc.Order
+    
+}
+query selectOrdersByStatus {
+    description: "Select all orders based on their main exchange "
+    statement: SELECT org.acme.sintegralabsbc.Order
+            WHERE (status ==_$status)
+}
+
+query selectOrdersByByer {
+    description: "Select all orders based on their buyer "
+    statement: SELECT org.acme.sintegralabsbc.Order
+            WHERE (buyer == _$buyer)
+}
+
+query selectOrdersWithHighAmount {
+    description: "Select order based on quantity "
+    statement: SELECT org.acme.sintegralabsbc.Order
+            WHERE (amount > 100)
+} 
